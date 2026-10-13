@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scuderia Motors | Compra, Venda, Troca, Financiamento e Agenciamento</title>
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome para Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilos Separados -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-gauge-high logo-icon"></i>
+      <div>
+        <span>SCUDERIA</span>
+        <span class="subtext">MOTORS</span>
+      </div>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#home">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#estoque">Estoque</a>
+      <a href="#simulador">Financiamento</a>
+      <a href="#download-imagens">Baixar Imagens</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    
+    <a href="#estoque" class="btn btn-red">Ver Estoque</a>
+  </header>
+
+  <!-- SEÇÃO HERO / INÍCIO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="badge-tag"><i class="fa-solid fa-shield-halved"></i> Qualidade e Tradição</div>
+      <h1>Excelência Automotiva <br><span class="highlight-gold">de Alta Performance</span></h1>
+      <p class="hero-subtext">A melhor experiência em compra, venda, troca, financiamento e agenciamento de carros e motos com avaliação pela Tabela FIPE.</p>
+      
+      <div class="services-pills">
+        <span class="pill"><i class="fa-solid fa-cart-shopping"></i> Compra</span>
+        <span class="pill"><span class="bullet">•</span> Venda</span>
+        <span class="pill"><span class="bullet">•</span> Troca</span>
+        <span class="pill"><span class="bullet">•</span> Financia</span>
+        <span class="pill"><span class="bullet">•</span> Agencia</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#estoque" class="btn btn-red btn-lg"><i class="fa-solid fa-car"></i> Explorar Estoque</a>
+        <a href="#simulador" class="btn btn-gold btn-lg"><i class="fa-solid fa-calculator"></i> Simular Financiamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAIXA DE DESTAQUE DOS SERVIÇOS -->
+  <section id="servicos" class="services-bar">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon-wrap"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Compra e Venda</h3>
+          <p>Pagamento à vista na compra do seu veículo e as melhores condições de mercado para aquisição.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-wrap"><i class="fa-solid fa-right-left"></i></div>
+          <h3>Troca com Troco</h3>
+          <p>Aceitamos seu carro ou moto na troca com excelente avaliação FIPE e troco na hora.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-wrap"><i class="fa-solid fa-file-signature"></i></div>
+          <h3>Financiamento</h3>
+          <p>Parceria com as principais financeiras, taxas reduzidas e aprovação rápida para seu orçamento.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Agenciamento / Consignação</h3>
+          <p>Vendemos seu veículo com segurança, fotos profissionais e divulgação nos melhores canais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGO DE ESTOQUE -->
+  <section id="estoque" class="catalog-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="gold-line"></div>
+        <h2>Nosso Estoque Exclusivo</h2>
+        <p>Veículos inspecionados, higienizados e prontos para entrega com transparência de preços FIPE.</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todos os Veículos</button>
+        <button class="filter-btn" data-filter="carro"><i class="fa-solid fa-car"></i> Carros (5)</button>
+        <button class="filter-btn" data-filter="moto"><i class="fa-solid fa-motorcycle"></i> Motos (5)</button>
+      </div>
+
+      <!-- Grid dos Veículos (Gerado via JavaScript) -->
+      <div class="vehicles-grid" id="vehiclesContainer"></div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR DE FINANCIAMENTO -->
+  <section id="simulador" class="simulator-section">
+    <div class="container">
+      <div class="simulator-wrapper">
+        <div class="sim-info">
+          <span class="gold-tag">Facilidade de Pagamento</span>
+          <h2>Simule seu Financiamento</h2>
+          <p>Trabalhamos com taxas especiais a partir de 0,99% a.m. Faça um cálculo rápido da sua parcela e solicite análise de crédito sem compromisso.</p>
+          
+          <ul class="sim-benefits">
+            <li><i class="fa-solid fa-circle-check"></i> Sem necessidade de comprovação de renda complexa</li>
+            <li><i class="fa-solid fa-circle-check"></i> Entrada facilitada em até 18x no cartão</li>
+            <li><i class="fa-solid fa-circle-check"></i> Primeira parcela para até 60 dias</li>
+          </ul>
+        </div>
+
+        <div class="sim-form-card">
+          <h3>Calculadora de Parcelas</h3>
+          
+          <div class="form-group">
+            <label for="simVehiclePrice">Valor do Veículo (R$)</label>
+            <input type="number" id="simVehiclePrice" value="85000" step="1000">
+          </div>
+
+          <div class="form-group">
+            <label for="simDownPayment">Valor da Entrada (R$)</label>
+            <input type="number" id="simDownPayment" value="25000" step="1000">
+          </div>
+
+          <div class="form-group">
+            <label for="simTerm">Número de Parcelas</label>
+            <select id="simTerm">
+              <option value="12">12x Meses</option>
+              <option value="24">24x Meses</option>
+              <option value="36">36x Meses</option>
+              <option value="48" selected>48x Meses</option>
+              <option value="60">60x Meses</option>
+            </select>
+          </div>
+
+          <div class="sim-result-box">
+            <span class="result-label">Estimativa da Parcela Mensal:</span>
+            <div class="result-value" id="simResultValue">R$ 1.845,00</div>
+            <small>*Valor aproximado, sujeito à aprovação de crédito e variação de score.</small>
+          </div>
+
+          <button id="btnSolicitarFinan" class="btn btn-red btn-block">
+            <i class="fa-brands fa-whatsapp"></i> Solicitar Aprovação via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREA DE DOWNLOAD DAS IMAGENS REAIS (LIVRES DE DIREITOS AUTORAIS) -->
+  <section id="download-imagens" class="download-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="gold-line"></div>
+        <h2>Imagens Reais do Projeto para Download</h2>
+        <p>Baixe diretamente as fotos de alta resolução (livres de direitos autorais via Unsplash) utilizadas no catálogo para integrar no seu banco de dados ou arquivos locais.</p>
+      </div>
+
+      <div class="downloads-grid" id="downloadContainer">
+        <!-- Preenchido via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="contato" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo footer-logo">
+          <i class="fa-solid fa-gauge-high logo-icon"></i>
+          <div>
+            <span>SCUDERIA</span>
+            <span class="subtext">MOTORS</span>
+          </div>
+        </div>
+        <p>Sua concessionária premium de confiança. Compra, venda, troca, financiamento e agenciamento com agilidade e total segurança jurídica.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Nossos Serviços</h4>
+        <ul>
+          <li><i class="fa-solid fa-chevron-right"></i> Compra com Pagamento À Vista</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Venda de Veículos Seminovos</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Avaliação Tabela FIPE para Troca</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Financiamento Multi-Bancos</li>
+          <li><i class="fa-solid fa-chevron-right"></i> Agenciamento VIP (Consignado)</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento & Contato</h4>
+        <p><i class="fa-solid fa-location-dot gold-text"></i> Av. das Nações, 1500 - Centro Automotivo</p>
+        <p><i class="fa-solid fa-phone gold-text"></i> (11) 4004-9000</p>
+        <p><i class="fa-brands fa-whatsapp gold-text"></i> (11) 99999-8888</p>
+        <p><i class="fa-solid fa-envelope gold-text"></i> contato@scuderiamotors.com.br</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Scuderia Motors. Todos os direitos reservados. Projeto padrão nas cores Preto, Branco, Dourado e Vermelho.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE DETALHES DO VEÍCULO -->
+  <div class="modal-overlay" id="vehicleModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scripts Separados -->
+  <script src="script.js"></script>
+</body>
+</html>

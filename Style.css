@@ -1,0 +1,796 @@
+/* ==========================================================================
+   RESET E VARIÁVEIS DE CORES (PRETO, BRANCO, DOURADO E VERMELHO FERRARI)
+   ========================================================================== */
+:root {
+  --bg-black: #0B0B0B;
+  --bg-dark-card: #141414;
+  --bg-card-hover: #1C1C1C;
+  --ferrari-red: #D60000;
+  --ferrari-red-hover: #FF1E1E;
+  --gold-primary: #D4AF37;
+  --gold-hover: #F3E5AB;
+  --text-white: #FFFFFF;
+  --text-gray: #B0B0B0;
+  --border-dark: #282828;
+  --font-main: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   BOTÕES E COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-red {
+  background-color: var(--ferrari-red);
+  color: var(--text-white);
+}
+
+.btn-red:hover {
+  background-color: var(--ferrari-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(214, 0, 0, 0.4);
+}
+
+.btn-gold {
+  background-color: var(--gold-primary);
+  color: #000;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.btn-outline:hover {
+  background: var(--gold-primary);
+  color: #000;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold-primary);
+  margin: 0 auto 15px auto;
+}
+
+.highlight-gold {
+  color: var(--gold-primary);
+}
+
+.gold-text {
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   CABEÇALHO / NAVBAR
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(11, 11, 11, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-white);
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--ferrari-red);
+}
+
+.logo span {
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  display: block;
+  line-height: 1;
+}
+
+.logo .subtext {
+  font-size: 0.7rem;
+  color: var(--gold-primary);
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   SEÇÃO HERO
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  background: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,11,11,0.7) 0%, rgba(11,11,11,0.95) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.services-pills .pill {
+  font-weight: 700;
+  color: var(--text-white);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.services-pills .bullet {
+  color: var(--ferrari-red);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FAIXA DE SERVIÇOS
+   ========================================================================== */
+.services-bar {
+  background-color: #080808;
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: var(--bg-dark-card);
+  padding: 30px 20px;
+  border-radius: 6px;
+  border-top: 3px solid var(--ferrari-red);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-top-color: var(--gold-primary);
+}
+
+.service-card .icon-wrap {
+  font-size: 2.2rem;
+  color: var(--gold-primary);
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.service-card p {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   CATÁLOGO E FILTROS
+   ========================================================================== */
+.catalog-section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: var(--bg-dark-card);
+  color: var(--text-white);
+  border: 1px solid var(--border-dark);
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: var(--ferrari-red);
+  border-color: var(--ferrari-red);
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* CARDS DE VEÍCULOS */
+.vehicle-card {
+  background-color: var(--bg-dark-card);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.vehicle-img-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.vehicle-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vehicle-card:hover .vehicle-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.badge-type {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0,0,0,0.85);
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.vehicle-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vehicle-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-dark);
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.specs-grid i {
+  color: var(--gold-primary);
+  margin-right: 5px;
+}
+
+.fipe-badge {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-left: 3px solid var(--gold-primary);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+
+}
+
+.fipe-badge strong {
+  color: var(--gold-primary);
+}
+
+.price-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.price-label {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  text-transform: uppercase;
+}
+
+.price-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ferrari-red);
+}
+
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   SIMULADOR
+   ========================================================================== */
+.simulator-section {
+  background: linear-gradient(180deg, #0B0B0B 0%, #141414 100%);
+  padding: 80px 0;
+  border-top: 1px solid var(--border-dark);
+}
+
+.simulator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.gold-tag {
+  color: var(--gold-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.sim-info h2 {
+  font-size: 2.3rem;
+  margin: 10px 0 20px;
+  font-weight: 800;
+}
+
+.sim-benefits {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.sim-benefits li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sim-benefits i {
+  color: var(--gold-primary);
+}
+
+.sim-form-card {
+  background-color: var(--bg-dark-card);
+  padding: 35px;
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.sim-form-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--ferrari-red);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-gray);
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #080808;
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  color: var(--text-white);
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--gold-primary);
+}
+
+.sim-result-box {
+  background-color: rgba(214, 0, 0, 0.08);
+  border: 1px dashed var(--ferrari-red);
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.result-label {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold-primary);
+  margin: 5px 0;
+}
+
+.sim-result-box small {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+/* ==========================================================================
+   DOWNLOAD DE IMAGENS
+   ========================================================================== */
+.download-section {
+  padding: 80px 0;
+  background-color: #080808;
+  border-top: 1px solid var(--border-dark);
+}
+
+.downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.dl-card {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.dl-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.dl-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  padding: 0 10px;
+}
+
+.dl-card p {
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer {
+  background-color: #050505;
+  border-top: 1px solid var(--border-dark);
+  padding-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--ferrari-red);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.footer-col ul li i {
+  color: var(--ferrari-red);
+  font-size: 0.7rem;
+  margin-right: 8px;
+}
+
+.footer-col p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  background-color: #000;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #111;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   MODAL DE DETALHES DO VEÍCULO
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--gold-primary);
+  width: 90%;
+  max-width: 750px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-white);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.modal-price-tag {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ferrari-red);
+  margin-bottom: 20px;
+}
+
+.modal-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  background-color: #080808;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+  .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .simulator-wrapper { grid-template-columns: 1fr; }
+}
